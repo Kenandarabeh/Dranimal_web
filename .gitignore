@@ -29,7 +29,6 @@ logs
 *.log
 yarn.lock
 pnpm-lock.yaml
-package-lock.json
 
 # Misc
 .DS_Store
