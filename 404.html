@@ -2,23 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/Dranimal_web/vet.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dranimal Web</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+    <title>Dranimal</title>
+    <script>
+      // إعادة توجيه GitHub Pages للتوافق مع HashRouter
+      (function() {
+        var path = window.location.pathname;
+        var search = window.location.search;
+        
+        // إذا كان المسار ليس الجذر، أعد توجيهه إلى hash
+        if (path !== '/Dranimal_web/' && path !== '/Dranimal_web/index.html') {
+          var redirectPath = path.replace('/Dranimal_web', '');
+          window.location.replace('/Dranimal_web/#' + redirectPath + search);
+        }
+      })();
     </script>
   </head>
   <body>
+    <div id="root"></div>
+    <script type="module" src="/Dranimal_web/assets/index.js"></script>
   </body>
 </html>
