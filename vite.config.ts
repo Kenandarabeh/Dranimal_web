@@ -8,14 +8,14 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    open: true, // يفتح المتصفح تلقائيًا عند تشغيل Vite
+    open: true,
   },
   build: {
-    outDir: "dist", // تحديد مجلد الإخراج
-    sourcemap: true, // تحسين التصحيح
+    outDir: "dist",
+    sourcemap: true,
   },
   plugins: [
-    react(),
+    react()
   ],
   resolve: {
     alias: {
@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   preview: {
-    port: 5000, // ضبط منفذ المعاينة بعد البناء
-    open: true, // يفتح المتصفح تلقائيًا عند تشغيل `vite preview`
+    port: 5000,
+    open: true,
   }
 }));

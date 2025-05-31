@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import Subscription from "./components/Subscription";
 import Index from "./pages/Index";
@@ -16,7 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* ✅ أضفنا <Router> حول <Routes> */}
+      {/* ✅ استخدام HashRouter بدلاً من BrowserRouter لـ GitHub Pages */}
       <Router>
         <Routes>
           <Route path="/" element={<Index />} />
