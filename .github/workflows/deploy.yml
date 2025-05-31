@@ -20,17 +20,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Debug Information
+      run: |
+        echo "Triggered by: ${{ github.event_name }}"
+        echo "Branch/Tag: ${{ github.ref }}"
+        echo "Workspace: ${{ github.workspace }}"
+        ls -la
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '18'
-        cache: 'npm'
 
     - name: Install dependencies
-      run: npm ci
+      run: |
+        npm install
+        echo "package-lock.json created successfully"
+        ls -la package-lock.json
 
     - name: Build
       run: npm run build
